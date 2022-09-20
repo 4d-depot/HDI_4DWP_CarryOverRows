@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE base SYSTEM "http://www.4d.com/dtd/2007/base.dtd" >
+<base name="HDI_4DWP_CarryOverRows" uuid="652F3EA1E604344993D38C88D5949740" collation_locale="en">
+	<schema name="DEFAULT_SCHEMA"/>
+	<table name="Companies" uuid="D51B26D316C37D4BA9AB081E94BAF6C3" id="1">
+		<field name="ID" uuid="9B79A7051949394E8001F9367CE27A4A" type="4" unique="true" autosequence="true" never_null="true" id="1">
+			<field_extra modifiable="false" mandatory="true" enumeration_id="-1">
+				<tip><![CDATA[The client ID				]]></tip>
+				<editor_field_info>
+					<color red="0" green="158" blue="96" alpha="255"/>
+				</editor_field_info>
+			</field_extra>
+		</field>
+		<field name="name" uuid="05839FF04D458F468E8112DC7DAC5746" type="10" limiting_length="40" never_null="true" id="2">
+			<field_extra enumeration_id="-1">
+				<tip><![CDATA[The client name				]]></tip>
+			</field_extra>
+		</field>
+		<field name="address" uuid="3F23EA6282305B499902A3A731ECED8A" type="10" never_null="true" id="3">
+			<field_extra enumeration_id="-1">
+				<tip><![CDATA[The client address 1				]]></tip>
+			</field_extra>
+		</field>
+		<field name="numbers" uuid="A1828146FB60E144AE9782DBDBD189C3" type="21" blob_switch_size="2147483647" never_null="true" id="4">
+			<field_extra>
+				<tip><![CDATA[The client address 2				]]></tip>
+			</field_extra>
+		</field>
+		<field name="city" uuid="76E1DD90E3AE57449F3A409EE113DE17" type="10" limiting_length="40" never_null="true" id="5">
+			<field_extra enumeration_id="-1">
+				<tip><![CDATA[The client zip code				]]></tip>
+			</field_extra>
+		</field>
+		<field name="state" uuid="520C14B3605DD641914F09979248706C" type="10" limiting_length="40" never_null="true" id="6">
+			<field_extra enumeration_id="-1">
+				<tip><![CDATA[The client city				]]></tip>
+			</field_extra>
+		</field>
+		<field name="zipCode" uuid="F56D291137F7204CB2805BFA5DCCF3E0" type="10" limiting_length="10" never_null="true" id="7">
+			<field_extra enumeration_id="-1">
+				<tip><![CDATA[The client telephone				]]></tip>
+			</field_extra>
+		</field>
+		<field name="logo" uuid="1F077809CC510841A3B55399B077139E" type="12" never_null="true" id="13">
+			<field_extra enumeration_id="-1">
+				<tip><![CDATA[Comments on client				]]></tip>
+			</field_extra>
+		</field>
+		<field name="contact" uuid="4ABCFF394CCEB74EBE85685BB3CCFC8E" type="10" limiting_length="80" never_null="true" id="14">
+			<field_extra enumeration_id="-1">
+				<tip><![CDATA[The client total sales				]]></tip>
+			</field_extra>
+		</field>
+		<field name="comments" uuid="542481867A8BEB40823B282AAE4E5E1A" type="10" never_null="true" id="15"/>
+		<field name="totalSales" uuid="4F49417823CE264697A0B9FDA22F373C" type="6" never_null="true" id="16"/>
+		<field name="country" uuid="DE4E1273E07B6444BFDCD908269DC715" type="10" limiting_length="40" never_null="true" id="17"/>
+		<field name="discountRate" uuid="95FC3375A564B94B888962DB55C38F07" type="6" never_null="true" id="18"/>
+		<field name="eAddresses" uuid="96C43A6CE374FC41A5C079C6A038E55C" type="21" blob_switch_size="2147483647" never_null="true" id="19"/>
+		<field name="optionalData" uuid="FC24E898C0DE483B83C9FEA3D3285345" type="21" blob_switch_size="2147483647" never_null="true" id="20"/>
+		<primary_key field_name="ID" field_uuid="9B79A7051949394E8001F9367CE27A4A"/>
+		<table_extra input_form="Companies_Input" output_form="Companies_output">
+			<editor_table_info displayable_fields_count="16">
+				<color red="168" green="206" blue="226" alpha="255"/>
+				<coordinates left="21.28515625" top="6.45703125" width="144" height="385.6171875"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Documents" uuid="96BAC9DCA9CA4E3EA1257050CD4CC250" id="2">
+		<field name="ID" uuid="1968780AAEF448C3A52FB9F795DEF54A" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="comments" uuid="B86A5A714A6A4DC78C1539E03E8FFA71" type="21" never_null="true" id="2"/>
+		<field name="title" uuid="40A7BF25E26E43FE9CEED5F2CE4AE18F" type="10" limiting_length="255" never_null="true" id="3"/>
+		<field name="pageNumber" uuid="DEA76B5C5E8D4067871B4C4870B6D3DC" type="4" never_null="true" id="4"/>
+		<field name="sample" uuid="153F4979E23A4DBEA02A17CDEF8DD245" type="21" blob_switch_size="2147483647" never_null="true" id="5"/>
+		<primary_key field_name="ID" field_uuid="1968780AAEF448C3A52FB9F795DEF54A"/>
+		<table_extra input_form="Doc_i" output_form="Doc_o">
+			<editor_table_info displayable_fields_count="5">
+				<color red="255" green="255" blue="255" alpha="0"/>
+				<coordinates left="806.01953125" top="388.58203125" width="120" height="164.3046875"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Templates" uuid="B7A9035A14184158BA68F5828BAA1881" id="3">
+		<field name="ID" uuid="6C0AAF3655214E45AC356D6E76737D4B" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="name" uuid="555E8E61DA7D49BABD7C2741EC6D6F42" type="10" limiting_length="255" never_null="true" id="2"/>
+		<field name="wp" uuid="4349596C24DD4946A196F3B243993C7C" type="21" blob_switch_size="2147483647" never_null="true" id="3"/>
+		<primary_key field_name="ID" field_uuid="6C0AAF3655214E45AC356D6E76737D4B"/>
+		<table_extra input_form="Template_i" output_form="Template_o">
+			<editor_table_info displayable_fields_count="6">
+				<color red="255" green="255" blue="255" alpha="0"/>
+				<coordinates left="360.7578125" top="380.94140625" width="120" height="167.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Products" uuid="E8BEC695CC622E44A54D332A5DD66FC1" id="4">
+		<field name="ID" uuid="C87D853EACF4CB45AAF7FF4A26F62345" type="4" unique="true" autosequence="true" never_null="true" id="1">
+			<field_extra mandatory="true" modifiable="false" enumeration_id="-1">
+				<editor_field_info>
+					<color red="239" green="107" blue="0" alpha="255"/>
+				</editor_field_info>
+			</field_extra>
+		</field>
+		<field name="reference" uuid="C49C4C9BF4352046946E0040253E1B55" type="10" limiting_length="20" never_null="true" id="2"/>
+		<field name="name" uuid="9E628B5A85E25D47815547CC8A6D9582" type="10" limiting_length="255" never_null="true" id="3"/>
+		<field name="picture" uuid="0692ACE77FB6E64EAE2F66D0DA81CC0E" type="12" never_null="true" id="4"/>
+		<field name="price" uuid="9081D52378F5D449B61A3CD1C2A7B218" type="6" never_null="true" id="5"/>
+		<field name="taxRate" uuid="679E12EFBE825440AD1F7C25727442CC" type="6" never_null="true" id="6"/>
+		<field name="Optional_Data" uuid="F6A452B86DCB4C69B07FA916DC88200F" type="21" blob_switch_size="2147483647" id="7"/>
+		<field name="description" uuid="617A6071090A477D9BACF385A9E41EE6" type="10" never_null="true" id="8"/>
+		<field name="thumbnail" uuid="176BB2E55EE247439CCFF24066D474AE" type="12" never_null="true" id="9"/>
+		<primary_key field_name="ID" field_uuid="C87D853EACF4CB45AAF7FF4A26F62345"/>
+		<table_extra input_form="Products_i" output_form="Products_o">
+			<editor_table_info displayable_fields_count="10">
+				<color red="252" green="191" blue="73" alpha="255"/>
+				<coordinates left="196.60546875" top="7.28515625" width="168.49609375" height="253.9375"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="InvoiceRows" uuid="D1FFCF985D1D4232AB12D9E8BA6B0988" id="5">
+		<field name="ID" uuid="29F1996B750440D38628C0F09F50F474" type="4" unique="true" autosequence="true" not_null="true" id="1">
+			<field_extra position="1"/>
+		</field>
+		<field name="reference" uuid="851D2C0772EC44C2A6D744B91B6C042A" type="10" limiting_length="255" never_null="true" id="2">
+			<field_extra position="2"/>
+		</field>
+		<field name="name" uuid="5A53B32ABBFD4D3697D1653C090D33C5" type="10" limiting_length="255" never_null="true" id="3">
+			<field_extra position="3"/>
+		</field>
+		<field name="thumbnail" uuid="8F60395769CB4B56814DB650729EE88B" type="12" never_null="true" id="4">
+			<field_extra position="4"/>
+		</field>
+		<field name="price" uuid="C581E68129914386B0DF4DFC6BA98E8E" type="6" never_null="true" id="5">
+			<field_extra position="5"/>
+		</field>
+		<field name="taxRate" uuid="A5CC4F01443F4184AB3A080E34C2FBE4" type="6" never_null="true" id="6">
+			<field_extra position="6"/>
+		</field>
+		<field name="description" uuid="C1CB6C64C68E4BDAA8C89BF17C17B446" type="10" limiting_length="255" never_null="true" id="7">
+			<field_extra position="7"/>
+		</field>
+		<field name="priceVAT" uuid="7F5BAB04900B44AE9BC9FE4FC98F814C" type="6" never_null="true" id="8">
+			<field_extra position="8"/>
+		</field>
+		<field name="totalPrice" uuid="6C3DE955E3BB4E658591FCF772732113" type="6" never_null="true" id="9">
+			<field_extra position="10"/>
+		</field>
+		<field name="quantity" uuid="EFC394F7273B4F4BBBEAD29D08457226" type="3" never_null="true" id="10">
+			<field_extra position="9"/>
+		</field>
+		<primary_key field_name="ID" field_uuid="29F1996B750440D38628C0F09F50F474"/>
+		<table_extra>
+			<editor_table_info fields_ordering="2" displayable_fields_count="10">
+				<color red="249" green="130" blue="127" alpha="255"/>
+				<coordinates left="390.265625" top="2.83984375" width="160.14453125" height="252.6484375"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<index kind="regular" uuid="1E2FA44277F64FAC92D6E20B3E82ADD8" type="7">
+		<field_ref uuid="9E628B5A85E25D47815547CC8A6D9582" name="name">
+			<table_ref uuid="E8BEC695CC622E44A54D332A5DD66FC1" name="Products"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="359E0110B7144EEE8497CABE4F8B1387" type="1">
+		<field_ref uuid="1968780AAEF448C3A52FB9F795DEF54A" name="ID">
+			<table_ref uuid="96BAC9DCA9CA4E3EA1257050CD4CC250" name="Documents"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="62513327476F4049AEBC98B2191D3629" type="7">
+		<field_ref uuid="9B79A7051949394E8001F9367CE27A4A" name="ID">
+			<table_ref uuid="D51B26D316C37D4BA9AB081E94BAF6C3" name="Companies"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="629A3A13E1D92E4487BA4143CFCB9F05" type="1">
+		<field_ref uuid="C87D853EACF4CB45AAF7FF4A26F62345" name="ID">
+			<table_ref uuid="E8BEC695CC622E44A54D332A5DD66FC1" name="Products"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="6EEE47830E7F48C58A949DD742C9378E" type="7">
+		<field_ref uuid="29F1996B750440D38628C0F09F50F474" name="ID">
+			<table_ref uuid="D1FFCF985D1D4232AB12D9E8BA6B0988" name="InvoiceRows"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="9969F385385EB3448C9B0F8E57AA6DF1" type="7">
+		<field_ref uuid="C49C4C9BF4352046946E0040253E1B55" name="reference">
+			<table_ref uuid="E8BEC695CC622E44A54D332A5DD66FC1" name="Products"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="9FE03E047A844EE7BED0D2DD63841191" type="3">
+		<field_ref uuid="A1828146FB60E144AE9782DBDBD189C3" name="numbers">
+			<table_ref uuid="D51B26D316C37D4BA9AB081E94BAF6C3" name="Companies"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="A0D9EA1D2A0B437CB3DA41003AAE84B0" type="3">
+		<field_ref uuid="FC24E898C0DE483B83C9FEA3D3285345" name="optionalData">
+			<table_ref uuid="D51B26D316C37D4BA9AB081E94BAF6C3" name="Companies"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="BC634B29D5844B85B9DB4757706FD0F7" type="1">
+		<field_ref uuid="6C0AAF3655214E45AC356D6E76737D4B" name="ID">
+			<table_ref uuid="B7A9035A14184158BA68F5828BAA1881" name="Templates"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="CC71E36D9AE843679336E9CB2A1CEAD2" type="3">
+		<field_ref uuid="96C43A6CE374FC41A5C079C6A038E55C" name="eAddresses">
+			<table_ref uuid="D51B26D316C37D4BA9AB081E94BAF6C3" name="Companies"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="E2996B3D751748778151E1B03DFEF817" type="3">
+		<field_ref uuid="F6A452B86DCB4C69B07FA916DC88200F" name="Optional_Data">
+			<table_ref uuid="E8BEC695CC622E44A54D332A5DD66FC1" name="Products"/>
+		</field_ref>
+	</index>
+	<base_extra __stringCompHash="icu:68.1.0" __keywordBuildingHash="icu:68.1.0" package_name="InvoicesDemoV18R3" structure_file_name="InvoicesDemo" data_file_path=":InvoicesDemo.4DD"/>
+</base>

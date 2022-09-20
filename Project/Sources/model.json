@@ -1,0 +1,105 @@
+{
+	"dataClasses":
+	{
+		"Clients":
+		{	
+			"attributes": 
+			{
+				"Full_Address":
+				{
+					"kind": "calculated",
+					"type": "text" 
+				},
+				"LinesList":
+				{
+					"kind": "relatedEntities",
+					"path": "Invoice_List.Lines_Fm_Invoices", 
+					"type": "Invoice_LinesSelection"
+				},
+				"ProductList":
+				{
+					"kind": "relatedEntities",
+					"path": "Invoice_List.Lines_Fm_Invoices.Product", 
+					"type": "ProductsSelection"
+				},
+				"Amount_Charged":
+				{
+					"kind": "calculated",
+					"type": "number" 
+				},
+				"Amount_Due":
+				{
+					"kind": "calculated",
+					"type": "number" 
+				},
+				"Clients_to_Invoices":
+				{
+					"kind": "relatedEntities",
+					"path": "Invoice_List", 
+					"type": "InvoicesSelection"
+				},
+				"Clients_to_Products":
+				{
+					"kind": "relatedEntities",
+					"path": "Invoice_List.Lines_Fm_Invoices.Product", 
+					"type": "ProductsSelection"
+				}
+				
+			}
+		}
+		,
+		
+		"Products":
+		{
+			"attributes": 
+			{
+				"Products_to_Invoices":
+				{
+					"kind": "relatedEntities",
+					"path": "Lines_Fm_Product.Invoice", 
+					"type": "InvoicesSelection"
+				},
+				"Products_to_Clients":
+				{
+					"kind": "relatedEntities",
+					"path": "Lines_Fm_Product.Invoice.Client", 
+					"type": "ClientsSelection"
+				},
+				"Sales_Amount_Num":
+				{
+					"kind": "calculated",
+					"type": "number" 
+				},
+				"Sales_Number_Num":
+				{
+					"kind": "calculated",
+					"type": "number" 
+				},
+				"Sales_Clients_Num":
+				{
+					"kind": "calculated",
+					"type": "number" 
+				}
+				
+			}
+		},
+		"Invoices":
+		{
+			"attributes": 
+			{
+				"Invoices_to_Products":
+				{
+					"kind": "relatedEntities",
+					"path": "Lines_Fm_Invoices.Product", 
+					"type": "ProductsSelection"
+				},
+				"Invoices_to_Clients":
+				{
+					"kind": "relatedEntities",
+					"path": "Client", 
+					"type": "ClientsSelection"
+				}
+			}
+		}
+	}
+}

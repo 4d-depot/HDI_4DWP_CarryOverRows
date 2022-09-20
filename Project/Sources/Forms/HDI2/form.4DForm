@@ -1,0 +1,428 @@
+{
+	"destination": "detailScreen",
+	"windowMinWidth": 1200,
+	"windowMaxWidth": 32000,
+	"windowMinHeight": 620,
+	"windowMaxHeight": 32000,
+	"width": 1200,
+	"height": 900,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onTimer",
+		"onPageChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "842pt",
+		"paperHeight": "595pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Tabs": {
+					"type": "tab",
+					"top": 20,
+					"left": 20,
+					"width": 1160,
+					"height": 860,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "Form:C1466.tabControl",
+					"dataSourceTypeHint": "object",
+					"action": "gotoPage",
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Tabs.4dm"
+				},
+				"Line": {
+					"type": "line",
+					"top": 0,
+					"left": 600,
+					"width": 1,
+					"height": 860,
+					"visibility": "hidden",
+					"stroke": "#da70d6",
+					"strokeDashArray": [
+						6,
+						2
+					]
+				}
+			}
+		},
+		{
+			"objects": {
+				"WParea2": {
+					"type": "write",
+					"top": 70,
+					"left": 140,
+					"width": 920,
+					"height": 790,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "WParea1",
+					"enterable": false,
+					"focusable": false,
+					"hideFocusRing": true,
+					"scrollbarVertical": "automatic",
+					"scrollbarHorizontal": "automatic",
+					"showSelection": true,
+					"showHorizontalRuler": false,
+					"showVerticalRuler": false,
+					"layoutMode": "embedded",
+					"borderStyle": "none",
+					"events": [],
+					"showBackground": false
+				},
+				"Static Picture1": {
+					"type": "picture",
+					"top": 500,
+					"left": 260,
+					"width": 680,
+					"height": 340,
+					"picture": "/RESOURCES/Images/RowsExplained.png",
+					"pictureFormat": "scaled"
+				}
+			}
+		},
+		{
+			"objects": {
+				"Group Box1": {
+					"type": "groupBox",
+					"text": "Carry over rows:",
+					"top": 720,
+					"left": 560,
+					"width": 270,
+					"height": 120,
+					"sizingY": "move",
+					"sizingX": "move"
+				},
+				"Group Box": {
+					"type": "groupBox",
+					"text": "Info:",
+					"top": 720,
+					"left": 220,
+					"width": 320,
+					"height": 120,
+					"sizingY": "move",
+					"sizingX": "grow"
+				},
+				"btnTrace": {
+					"type": "checkbox",
+					"text": "Trace code",
+					"top": 850,
+					"left": 1060,
+					"width": 110,
+					"height": 20,
+					"events": [
+						"onClick"
+					],
+					"dataSource": "Form:C1466.trace",
+					"sizingX": "move",
+					"sizingY": "move",
+					"enterable": true,
+					"focusable": false
+				},
+				"WParea1": {
+					"type": "write",
+					"top": 60,
+					"left": 850,
+					"width": 310,
+					"height": 650,
+					"sizingX": "move",
+					"sizingY": "fixed",
+					"dataSource": "WParea1",
+					"enterable": false,
+					"focusable": false,
+					"hideFocusRing": true,
+					"scrollbarVertical": "automatic",
+					"scrollbarHorizontal": "automatic",
+					"showSelection": true,
+					"showHorizontalRuler": false,
+					"showVerticalRuler": false,
+					"layoutMode": "embedded",
+					"borderStyle": "none",
+					"events": [],
+					"showBackground": false
+				},
+				"WPmailing": {
+					"type": "write",
+					"top": 60,
+					"left": 40,
+					"width": 500,
+					"height": 650,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "WParea2",
+					"enterable": true,
+					"focusable": true,
+					"hideFocusRing": true,
+					"scrollbarVertical": "automatic",
+					"scrollbarHorizontal": "automatic",
+					"showSelection": true,
+					"showHorizontalRuler": false,
+					"showVerticalRuler": false,
+					"layoutMode": "page",
+					"borderStyle": "none",
+					"events": [],
+					"zoom": 75
+				},
+				"LB": {
+					"type": "listbox",
+					"left": 560,
+					"top": 60,
+					"width": 270,
+					"height": 650,
+					"events": [
+						"onSelectionChange"
+					],
+					"dataSource": "Form:C1466.companies",
+					"listboxType": "collection",
+					"verticalLineStroke": "transparent",
+					"currentItemSource": "Form:C1466.currentCompany",
+					"method": "ObjectMethods/LB.4dm",
+					"scrollbarHorizontal": "hidden",
+					"headerHeight": "31px",
+					"rowHeight": "20px",
+					"selectionMode": "single",
+					"sizingX": "move",
+					"sizingY": "grow",
+					"columns": [
+						{
+							"header": {
+								"text": "Company name",
+								"name": "Header1"
+							},
+							"name": "Column1",
+							"footer": {
+								"name": "Footer1"
+							},
+							"dataSource": "This:C1470.name",
+							"width": 250
+						}
+					]
+				},
+				"btnValues": {
+					"type": "button",
+					"top": 820,
+					"left": 850,
+					"width": 150,
+					"height": 20,
+					"sizingY": "move",
+					"text": "Display values",
+					"focusable": false,
+					"method": "ObjectMethods/btnValues.4dm",
+					"events": [
+						"onClick"
+					],
+					"sizingX": "move"
+				},
+				"btnFormulas": {
+					"type": "button",
+					"top": 790,
+					"left": 850,
+					"width": 150,
+					"height": 20,
+					"sizingY": "move",
+					"text": "Display formulas",
+					"focusable": false,
+					"method": "ObjectMethods/btnFormulas.4dm",
+					"events": [
+						"onClick"
+					],
+					"sizingX": "move"
+				},
+				"btnHTML": {
+					"type": "button",
+					"top": 790,
+					"left": 40,
+					"width": 150,
+					"height": 20,
+					"sizingY": "move",
+					"text": "Export to HTML (*)",
+					"focusable": false,
+					"method": "ObjectMethods/btnHTML.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"btnPDF": {
+					"type": "button",
+					"top": 730,
+					"left": 40,
+					"width": 150,
+					"height": 20,
+					"sizingY": "move",
+					"text": "Export to PDF",
+					"focusable": false,
+					"method": "ObjectMethods/btnPDF.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"btnSVG": {
+					"type": "button",
+					"top": 760,
+					"left": 40,
+					"width": 150,
+					"height": 20,
+					"sizingY": "move",
+					"text": "Export to SVG",
+					"focusable": false,
+					"method": "ObjectMethods/btnSVG.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"btnDOCX": {
+					"type": "button",
+					"top": 820,
+					"left": 40,
+					"width": 150,
+					"height": 20,
+					"sizingY": "move",
+					"text": "Export to Docx (*)",
+					"focusable": false,
+					"method": "ObjectMethods/btnDOCX.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Popup Dropdown List": {
+					"type": "dropdown",
+					"left": 350,
+					"top": 746,
+					"width": 170,
+					"height": 20,
+					"events": [
+						"onDataChange"
+					],
+					"dataSourceTypeHint": "object",
+					"dataSource": "Form:C1466.pop",
+					"sizingY": "move",
+					"method": "ObjectMethods/Popup Dropdown List.4dm",
+					"focusable": false,
+					"sizingX": "fixed"
+				},
+				"Input": {
+					"type": "input",
+					"left": 230,
+					"top": 775,
+					"width": 300,
+					"height": 60,
+					"enterable": false,
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"dataSource": "Form:C1466.displayInfo",
+					"sizingY": "move",
+					"fontWeight": "normal",
+					"sizingX": "grow"
+				},
+				"Check Box": {
+					"type": "checkbox",
+					"text": "Activate carry over rows",
+					"top": 747,
+					"left": 580,
+					"width": 250,
+					"height": 19,
+					"events": [
+						"onClick"
+					],
+					"action": "",
+					"sizingY": "move",
+					"enterable": true,
+					"focusable": false,
+					"dataSource": "Form:C1466.btmCOR",
+					"method": "ObjectMethods/Check Box.4dm",
+					"sizingX": "move",
+					"fontWeight": "bold",
+					"stroke": "#9400d3"
+				},
+				"Text": {
+					"type": "text",
+					"text": "(*) Carry over rows are not exported in this format.",
+					"top": 855,
+					"left": 38,
+					"width": 440,
+					"height": 20,
+					"sizingY": "move",
+					"sizingX": "grow"
+				},
+				"btnFreeze": {
+					"type": "button",
+					"top": 790,
+					"left": 1010,
+					"width": 150,
+					"height": 20,
+					"sizingY": "move",
+					"text": "Freeze formulas…",
+					"focusable": false,
+					"method": "ObjectMethods/btnFreeze.4dm",
+					"events": [
+						"onClick"
+					],
+					"sizingX": "move"
+				},
+				"btnReset": {
+					"type": "button",
+					"top": 820,
+					"left": 1010,
+					"width": 150,
+					"height": 20,
+					"sizingY": "move",
+					"text": "Reset",
+					"focusable": false,
+					"method": "ObjectMethods/btnReset.4dm",
+					"events": [
+						"onClick"
+					],
+					"sizingX": "move"
+				},
+				"Text1": {
+					"type": "text",
+					"text": "When carry over rows are disabled, the carry over row template is displayed as a regular row.",
+					"top": 773,
+					"left": 580,
+					"width": 240,
+					"height": 67,
+					"sizingY": "move",
+					"sizingX": "move",
+					"fontWeight": "normal"
+				},
+				"ExtraInfo1": {
+					"type": "text",
+					"text": "Invoice size:",
+					"top": 748,
+					"left": 230,
+					"width": 114,
+					"height": 16,
+					"fill": "transparent",
+					"fontWeight": "bold",
+					"textAlign": "right",
+					"stroke": "#9400d3",
+					"sizingY": "move",
+					"sizingX": "fixed"
+				}
+			}
+		}
+	],
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"geometryStamp": 5537,
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {}
+		}
+	},
+	"menuBar": "Menu Bar #1"
+}
